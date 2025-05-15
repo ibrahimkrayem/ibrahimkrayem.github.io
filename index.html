@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibrahim Krayem - Portfolio</title>
+    <title>Ibrahim Krayem - Accueil</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,7 +17,9 @@
             color: #fff;
             padding: 30px 0;
             text-align: center;
-            animation: fadeIn 2s ease-in-out;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
         }
         nav {
             display: flex;
@@ -26,7 +28,7 @@
             background-color: #333;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: sticky;
-            top: 0;
+            top: 70px;
             z-index: 1000;
             padding: 0 20px;
         }
@@ -56,24 +58,15 @@
             padding: 40px 20px;
             max-width: 900px;
             margin: auto;
+            text-align: center;
         }
         h2 {
             color: #444;
+            margin-bottom: 20px;
         }
-        .section {
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-        .active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
         }
     </style>
 </head>
@@ -85,86 +78,21 @@
 
     <nav>
         <div class="menu">
-            <div class="menu">
-                <a href="#" id="menu-about" onclick="showSection('about')">À propos</a>
-                <a href="skills.html">Formation & Compétences</a>
-                <a href="#" id="menu-skills" onclick="showSection('skills')">Compétences</a>
-                <a href="#" id="menu-experience" onclick="showSection('experience')">Expérience</a>
-                <a href="#" id="menu-contact" onclick="showSection('contact')">Contact</a>
-            </div>   
+            <a href="index.html">Accueil</a>
+            <a href="skills.html">Formation & Compétences</a>
+            <a href="experience.html">Expérience</a>
+            <a href="contact.html">Contact</a>
         </div>
         <div class="lang-select">
-            <img src="https://flagcdn.com/w40/fr.png" onclick="setLanguage('fr')" alt="FR">
-            <img src="https://flagcdn.com/w40/gb.png" onclick="setLanguage('en')" alt="EN">
+            <img src="https://flagcdn.com/w40/fr.png" alt="FR">
+            <img src="https://flagcdn.com/w40/gb.png" alt="EN">
         </div>
     </nav>
 
     <div class="content">
-        <div id="about" class="section active">
-            <h2>À propos de moi</h2>
-            <p id="aboutText">Je suis un expert en IA générative et optimisation des processus avec un doctorat en informatique et 5 ans d'expérience en R&D.</p>
-        </div>
-
-        <div id="skills" class="section">
-            <h2>Compétences</h2>
-            <ul id="skillsList">
-                <li>IA Générative, LLM, RAG</li>
-                <li>Développement logiciel (Python, Java, Spring, Angular, Streamlit)</li>
-                <li>Data Science & Bases de données (PostgreSQL, Neo4j, Milvus)</li>
-                <li>DevOps & Cloud (Azure, Docker)</li>
-            </ul>
-        </div>
-
-        <div id="experience" class="section">
-            <h2>Expérience</h2>
-            <p>Chef de Projet R&D chez Talan - Optimisation des processus et développement de prototypes IA.<br>Ingénieur R&D à l'IRISA - Recherche sur les architectures NoC et WiNoC.<br>Stages et projets académiques en IA, Deep Learning, Systèmes embarqués.</p>
-        </div>
-
-        <div id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email : ibrahim.krayem@talan.com</p>
-            <p>LinkedIn : <a href="#">À ajouter</a></p>
-        </div>
+        <h2>Bienvenue sur mon site personnel</h2>
+        <p>Je suis Ibrahim Krayem, Docteur en Informatique et Consultant en Intelligence Artificielle & Data. Passionné par les technologies émergentes et la recherche appliquée, j'accompagne les entreprises dans leurs projets d'innovation numérique et d'optimisation des processus par l'IA.</p>
+        <p>N'hésitez pas à consulter les différentes sections pour en savoir plus sur mon parcours, mes compétences et mes projets.</p>
     </div>
-
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            setTimeout(() => {
-                document.getElementById(sectionId).classList.add('active');
-            }, 50);
-        }
-
-        function setLanguage(lang) {
-            if(lang === 'fr') {
-                document.getElementById("menu-about").innerText = "À propos";
-                document.getElementById("menu-skills").innerText = "Compétences";
-                document.getElementById("menu-experience").innerText = "Expérience";
-                document.getElementById("menu-contact").innerText = "Contact";
-                document.querySelector('#about h2').innerText = "À propos de moi";
-                document.getElementById("aboutText").innerText = "Je suis un expert en IA générative et optimisation des processus avec un doctorat en informatique et 5 ans d'expérience en R&D.";
-                document.querySelector('#skills h2').innerText = "Compétences";
-                document.getElementById("skillsList").innerHTML = "<li>IA Générative, LLM, RAG</li><li>Développement logiciel (Python, Java, Spring, Angular, Streamlit)</li><li>Data Science & Bases de données (PostgreSQL, Neo4j, Milvus)</li><li>DevOps & Cloud (Azure, Docker)</li>";
-                document.querySelector('#experience h2').innerText = "Expérience";
-                document.querySelector('#experience p').innerHTML = "Chef de Projet R&D chez Talan - Optimisation des processus et développement de prototypes IA.<br>Ingénieur R&D à l'IRISA - Recherche sur les architectures NoC et WiNoC.<br>Stages et projets académiques en IA, Deep Learning, Systèmes embarqués.";
-                document.querySelector('#contact h2').innerText = "Contact";
-            } else {
-                document.getElementById("menu-about").innerText = "About";
-                document.getElementById("menu-skills").innerText = "Skills";
-                document.getElementById("menu-experience").innerText = "Experience";
-                document.getElementById("menu-contact").innerText = "Contact";
-                document.querySelector('#about h2').innerText = "About me";
-                document.getElementById("aboutText").innerText = "I am an expert in generative AI and process optimization with a PhD in computer science and 5 years of R&D experience.";
-                document.querySelector('#skills h2').innerText = "Skills";
-                document.getElementById("skillsList").innerHTML = "<li>Generative AI, LLM, RAG</li><li>Software development (Python, Java, Spring, Angular, Streamlit)</li><li>Data Science & Databases (PostgreSQL, Neo4j, Milvus)</li><li>DevOps & Cloud (Azure, Docker)</li>";
-                document.querySelector('#experience h2').innerText = "Experience";
-                document.querySelector('#experience p').innerHTML = "R&D Project Manager at Talan - Process optimization and development of AI prototypes.<br>R&D Engineer at IRISA - Research on NoC and WiNoC architectures.<br>Internships and academic projects in AI, Deep Learning, Embedded Systems.";
-                document.querySelector('#contact h2').innerText = "Contact";
-            }
-        }
-    </script>
 </body>
 </html>
