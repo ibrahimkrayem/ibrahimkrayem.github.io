@@ -6,40 +6,57 @@
     <title>Ibrahim Krayem - Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #ece9e6, #ffffff);
             color: #333;
+            overflow-x: hidden;
         }
         header {
-            background-color: #333;
+            background-color: #222;
             color: #fff;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
+            animation: fadeIn 2s ease-in-out;
         }
         nav {
-            background-color: #444;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a, nav button {
-            float: left;
-            display: block;
             color: white;
-            text-align: center;
-            padding: 14px 16px;
+            padding: 14px 20px;
             text-decoration: none;
             border: none;
             background: none;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         nav a:hover, nav button:hover {
-            background-color: #555;
+            background-color: #575757;
+        }
+        .lang-select img {
+            width: 24px;
+            height: 16px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .lang-select img:hover {
+            transform: scale(1.2);
         }
         .content {
-            padding: 20px;
-            max-width: 800px;
+            padding: 40px 20px;
+            max-width: 900px;
             margin: auto;
+            animation: slideUp 1s ease-out;
         }
         h2 {
             color: #444;
@@ -49,6 +66,14 @@
         }
         .active {
             display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -63,8 +88,10 @@
         <a href="#" onclick="showSection('skills')">Compétences</a>
         <a href="#" onclick="showSection('experience')">Expérience</a>
         <a href="#" onclick="showSection('contact')">Contact</a>
-        <button onclick="setLanguage('fr')">Français</button>
-        <button onclick="setLanguage('en')">English</button>
+        <div class="lang-select">
+            <img src="https://flagcdn.com/w40/fr.png" onclick="setLanguage('fr')" alt="FR">
+            <img src="https://flagcdn.com/w40/gb.png" onclick="setLanguage('en')" alt="EN">
+        </div>
     </nav>
 
     <div class="content">
@@ -108,29 +135,4 @@
             if(lang === 'fr') {
                 document.querySelector('nav a:nth-child(1)').innerText = "À propos";
                 document.querySelector('nav a:nth-child(2)').innerText = "Compétences";
-                document.querySelector('nav a:nth-child(3)').innerText = "Expérience";
-                document.querySelector('nav a:nth-child(4)').innerText = "Contact";
-                document.querySelector('#about h2').innerText = "À propos de moi";
-                document.getElementById("aboutText").innerText = "Je suis un expert en IA générative et optimisation des processus avec un doctorat en informatique et 5 ans d'expérience en R&D.";
-                document.querySelector('#skills h2').innerText = "Compétences";
-                document.getElementById("skillsList").innerHTML = "<li>IA Générative, LLM, RAG</li><li>Développement logiciel (Python, Java, Spring, Angular, Streamlit)</li><li>Data Science & Bases de données (PostgreSQL, Neo4j, Milvus)</li><li>DevOps & Cloud (Azure, Docker)</li>";
-                document.querySelector('#experience h2').innerText = "Expérience";
-                document.querySelector('#experience p').innerHTML = "Chef de Projet R&D chez Talan - Optimisation des processus et développement de prototypes IA.<br>Ingénieur R&D à l'IRISA - Recherche sur les architectures NoC et WiNoC.<br>Stages et projets académiques en IA, Deep Learning, Systèmes embarqués.";
-                document.querySelector('#contact h2').innerText = "Contact";
-            } else {
-                document.querySelector('nav a:nth-child(1)').innerText = "About";
-                document.querySelector('nav a:nth-child(2)').innerText = "Skills";
-                document.querySelector('nav a:nth-child(3)').innerText = "Experience";
-                document.querySelector('nav a:nth-child(4)').innerText = "Contact";
-                document.querySelector('#about h2').innerText = "About me";
-                document.getElementById("aboutText").innerText = "I am an expert in generative AI and process optimization with a PhD in computer science and 5 years of R&D experience.";
-                document.querySelector('#skills h2').innerText = "Skills";
-                document.getElementById("skillsList").innerHTML = "<li>Generative AI, LLM, RAG</li><li>Software development (Python, Java, Spring, Angular, Streamlit)</li><li>Data Science & Databases (PostgreSQL, Neo4j, Milvus)</li><li>DevOps & Cloud (Azure, Docker)</li>";
-                document.querySelector('#experience h2').innerText = "Experience";
-                document.querySelector('#experience p').innerHTML = "R&D Project Manager at Talan - Process optimization and development of AI prototypes.<br>R&D Engineer at IRISA - Research on NoC and WiNoC architectures.<br>Internships and academic projects in AI, Deep Learning, Embedded Systems.";
-                document.querySelector('#contact h2').innerText = "Contact";
-            }
-        }
-    </script>
-</body>
-</html>
+                document.querySelector('nav a:nth-child(3)').innerText
