@@ -3,24 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue sur mon site</title>
+    <title>Ibrahim Krayem - CV</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
         }
         h1 {
-            color: #333;
+            margin: 0;
+        }
+        nav {
+            margin: 15px 0;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
         }
     </style>
 </head>
 <body>
-    <h1>Bonjour, je suis Ibrahim 👋</h1>
-    <p>Mon site personnel est en construction 🚧</p>
+    <header>
+        <h1>Ibrahim Krayem</h1>
+        <p>Consultant en Intelligence Artificielle & Data | Chef de Projet R&D</p>
+    </header>
+
+    <nav>
+        <button onclick="setLanguage('fr')">Français</button>
+        <button onclick="setLanguage('en')">English</button>
+    </nav>
+
+    <div class="content">
+        <h2 id="title">À propos de moi</h2>
+        <p id="about">Je suis un expert en IA générative et optimisation des processus avec un doctorat en informatique et 5 ans d'expérience en R&D.</p>
+
+        <h2 id="skillsTitle">Compétences</h2>
+        <ul id="skills">
+            <li>IA Générative, LLM, RAG</li>
+            <li>Développement logiciel (Python, Java, Spring, Angular, Streamlit)</li>
+            <li>Data Science & Bases de données (PostgreSQL, Neo4j, Milvus)</li>
+            <li>DevOps & Cloud (Azure, Docker)</li>
+        </ul>
+
+        <h2 id="contactTitle">Contact</h2>
+        <p>Email : ibrahim.krayem@talan.com</p>
+        <p>LinkedIn : <a href="#">À ajouter</a></p>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            if(lang === 'fr') {
+                document.getElementById("title").innerText = "À propos de moi";
+                document.getElementById("about").innerText = "Je suis un expert en IA générative et optimisation des processus avec un doctorat en informatique et 5 ans d'expérience en R&D.";
+                document.getElementById("skillsTitle").innerText = "Compétences";
+                document.getElementById("skills").innerHTML = "<li>IA Générative, LLM, RAG</li><li>Développement logiciel (Python, Java, Spring, Angular, Streamlit)</li><li>Data Science & Bases de données (PostgreSQL, Neo4j, Milvus)</li><li>DevOps & Cloud (Azure, Docker)</li>";
+                document.getElementById("contactTitle").innerText = "Contact";
+            } else {
+                document.getElementById("title").innerText = "About me";
+                document.getElementById("about").innerText = "I am an expert in generative AI and process optimization with a PhD in computer science and 5 years of R&D experience.";
+                document.getElementById("skillsTitle").innerText = "Skills";
+                document.getElementById("skills").innerHTML = "<li>Generative AI, LLM, RAG</li><li>Software development (Python, Java, Spring, Angular, Streamlit)</li><li>Data Science & Databases (PostgreSQL, Neo4j, Milvus)</li><li>DevOps & Cloud (Azure, Docker)</li>";
+                document.getElementById("contactTitle").innerText = "Contact";
+            }
+        }
+    </script>
 </body>
 </html>
