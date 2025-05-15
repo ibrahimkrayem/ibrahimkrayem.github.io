@@ -56,24 +56,24 @@
             padding: 40px 20px;
             max-width: 900px;
             margin: auto;
-            animation: slideUp 1s ease-out;
         }
         h2 {
             color: #444;
         }
         .section {
             display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
         }
         .active {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -130,7 +130,9 @@
             sections.forEach(section => {
                 section.classList.remove('active');
             });
-            document.getElementById(sectionId).classList.add('active');
+            setTimeout(() => {
+                document.getElementById(sectionId).classList.add('active');
+            }, 50);
         }
 
         function setLanguage(lang) {
