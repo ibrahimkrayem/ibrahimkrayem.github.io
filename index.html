@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibrahim Krayem - Accueil</title>
+    <title>Ibrahim Krayem - Portfolio</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -68,6 +68,16 @@
             font-size: 1.1em;
             line-height: 1.6em;
         }
+        ul {
+            line-height: 1.6;
+        }
+        h3 {
+            color: #555;
+            margin-top: 25px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
     </style>
 </head>
 <body>
@@ -78,8 +88,9 @@
 
     <nav>
         <div class="menu">
-            <a href="index.html">Accueil</a>
-            <a href="skills.html">Formation & Compétences</a>
+            <a href="#accueil">Accueil</a>
+            <a href="#formation">Formation</a>
+            <a href="#competences">Compétences</a>
             <a href="experience.html">Expérience</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -90,9 +101,49 @@
     </nav>
 
     <div class="content">
-        <h2>Bienvenue sur mon site personnel</h2>
-        <p>Je suis Ibrahim Krayem, Docteur en Informatique et Consultant en Intelligence Artificielle & Data. Passionné par les technologies émergentes et la recherche appliquée, j'accompagne les entreprises dans leurs projets d'innovation numérique et d'optimisation des processus par l'IA.</p>
-        <p>N'hésitez pas à consulter les différentes sections pour en savoir plus sur mon parcours, mes compétences et mes projets.</p>
+        <section id="accueil">
+            <h2>Bienvenue sur mon site personnel</h2>
+            <p>Je suis Ibrahim Krayem, Docteur en Informatique et Consultant en Intelligence Artificielle & Data. Passionné par les technologies émergentes et la recherche appliquée, j'accompagne les entreprises dans leurs projets d'innovation numérique et d'optimisation des processus par l'IA.</p>
+            <p>N'hésitez pas à consulter les différentes sections pour en savoir plus sur mon parcours, mes compétences et mes projets.</p>
+        </section>
+
+        <section id="formation">
+            <h2>Formation</h2>
+            <ul>
+                <li>2024 : Doctorat en informatique, Université de Rennes - IRISA</li>
+                <li>2020 : Diplôme d'Ingénieur - Systèmes, Informatique, Télécommunications et Sécurité - ENSTA</li>
+                <li>2017 : Licence - Génie des Réseaux Informatiques et Télécommunications - Université libanaise</li>
+            </ul>
+        </section>
+
+        <section id="competences">
+            <h2>Compétences détaillées</h2>
+            <h3>Compétences sectorielles</h3>
+            <ul>
+                <li>Intelligence Artificielle & Générative</li>
+                <li>Data Science & Ingénierie des données</li>
+                <li>Recherche & Développement</li>
+                <li>Veille scientifique</li>
+            </ul>
+
+            <h3>Méthodologies</h3>
+            <ul>
+                <li>Gestion de projet & Agilité : Méthode Agile, Spécification des besoins, Analyse fonctionnelle et non fonctionnelle, Modélisation et conception, Jira, Suivi d'exploitation</li>
+                <li>Support & Documentation : Support technique, Rapport d'activités, Documentation technique et scientifique, Publication scientifique</li>
+                <li>Communication & Transmission : Présentations et conférences, Encadrement et enseignement</li>
+            </ul>
+
+            <h3>Compétences techniques</h3>
+            <ul>
+                <li>IA : IA générative, LLM, RAG</li>
+                <li>Développement : Backend (Python, Java, Spring), Frontend (Angular, Streamlit)</li>
+                <li>Bases de Données : Relationnelles (PostgreSQL, SQL, SQL Server, SQLite), Vectorielles (Milvus, ChromaDB, FAISS), Graphiques (Neo4j)</li>
+                <li>DevOps & Cloud : Azure, Docker</li>
+                <li>Langages : Python, Java, C, C++, C#, Assembleur, Matlab, YAML</li>
+                <li>Traitement d'images : OpenCV, TensorFlow</li>
+                <li>Outils : Visual Studio Code, LangGraph studio, Github, Gitlab, Microsoft Office 365, Latex</li>
+            </ul>
+        </section>
     </div>
 
     <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px;">
